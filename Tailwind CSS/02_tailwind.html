@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Using the standard Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6 bg-gray-100">
+
+    <!-- Fixed classes: w-64, border-4, and border-gray-300 -->
+    <div class="flex gap-4 flex-col justify-center items-center space-y-4">
+        <div class="w-64 p-6 bg-green-800 rounded-lg shadow-lg border-4 border-gray-300 flex items-center hover:color-blue-900 justify-center cursor-pointer hover:bg-sky-700 active:bg-sky-900">
+             <h2 class="text-2xl font-bold text-white">John Doe</h2>
+        </div>
+
+        <div class="w-64 p-6 bg-green-800 rounded-lg shadow-lg border-4 border-gray-300 flex items-center hover:color-blue-900 mt-4 justify-center cursor-pointer hover:bg-sky-700 active:bg-sky-900">
+            <h2 class="text-2xl font-bold text-white">Jane Smith</h2>
+        </div>
+    </div>
+
+    <div class="hover:color-blue-900 mt-4 justify-center cursor-pointer hover:bg-sky-700 active:bg-sky-900 flex items-center">
+            <button class="flex items-center w-40 p-4 bg-sky-500 hover:bg-sky-700 font-bold text-white m-0">Save changes</button>
+     </div>
+
+</body>
+</html>
