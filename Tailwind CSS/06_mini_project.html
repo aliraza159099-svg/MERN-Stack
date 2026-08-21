@@ -18,7 +18,7 @@
             <li><a href="a" class="text-green-900 font-bold text-xl hover:text-green-300">About</a></li>
             <li><a href="a" class="text-green-900 font-bold text-xl hover:text-green-300">Services</a></li>
         </ul>
-        <button class="text-white font-bold text-xl bg-yellow-500 py-2 px-3 rounded-md">
+        <button class="animate-pulse transition-all duration-300 hover:bg-yellow-600 text-white font-bold text-xl bg-yellow-500 py-2 px-3 rounded-md">
             Get Started
         </button>
     </div>
@@ -34,11 +34,11 @@
             We successfully delivered thousands of services to clients across world
          </p>
          <div class="mt-6 mb-6  flex items-center justify-center gap-4">
-            <button class="px-4 bg-blue-500 text-2xl rounded-lg text-white font-bold">
+            <button class="transition-all duration-300 hover:bg-yellow-600 px-4 bg-blue-500 text-2xl rounded-lg text-white font-bold">
                 Order 
             </button>
 
-            <button class="px-4 bg-green-400 text-2xl rounded-lg text-while font-bold">
+            <button class="transition-all duration-300 hover:bg-yellow-600 px-4 bg-green-400 text-2xl rounded-lg text-while font-bold">
                 Query
             </button>
          </div>
@@ -69,8 +69,98 @@
     </div>
    </div>
 
+   <!-- tag of services -->
+    <div class="text-4xl text-yellow-700 font-bold py-8 flex justify-center ">
+        Our Services
+    </div>
+
+   <!-- Services -->
+   <div class="bg-gray-100 grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    <!-- Thumbnail cards -->
+    <div class="bg-gray-300 rounded-lg hover:bg-white mb-6">
+        <img src="/images/studio.jpg" alt="Thumbnail" class="w-full h-auto">
+        <h1 class="ml-2 text-blue-500 text-4xl font-bold py-4 ">
+            Top class thumbnails for just
+        </h1>
+        <h2 class="ml-2 text-green-900 text-3xl font-bold">
+            RS 300pkr
+        </h2>
+        <p class="ml-2 text-black text-2xl mt-4">
+            We have delivered thousands of clents across globe
+        </p>
+        <div class="mt-6 mb-6  flex items-center justify-center">
+            <button class="hover:bg-yellow-200 px-4 bg-yellow-500 text-2xl rounded-lg text-white font-bold " onclick="sayhello()" >
+            Order Now
+        </button>
+        </div>
+    </div>
+    <!-- for videos -->
+     <div class="bg-gray-300 rounded-lg hover:bg-white mb-6 ">
+       <video src="/images/video1.mp4" controls class="w-full h-auto rounded-md"></video>
+        <h1 class="ml-2 text-blue-500 text-4xl font-bold py-4 ">
+            Eye-catching intro-videos 
+        </h1>
+        <h2 class="ml-2 text-green-900 text-3xl font-bold">
+            RS 1000pkr
+        </h2>
+        <p class="ml-2 text-black text-2xl mt-4">
+            We have delivered thousands of clents across globe
+        </p>
+        <div class="mt-6 mb-6  flex items-center justify-center">
+            <button class="hover:bg-yellow-200 px-4 bg-yellow-500 text-2xl rounded-lg text-white font-bold">
+            Order Now
+        </button>
+        </div>
+    </div>
+<!-- langing pages -->
+    <div class="bg-gray-300 rounded-lg hover:bg-white mb-6 ">
+        <img src="/images/studio.jpg" alt="Thumbnail">
+        <h1 class="ml-2 text-blue-500 text-4xl font-bold py-4 ">
+            Eye-catching intro-videos 
+        </h1>
+        <h2 class="ml-2 text-green-900 text-3xl font-bold">
+            RS 1000pkr
+        </h2>
+        <p class="ml-2 text-black text-2xl mt-4">
+            We have delivered thousands of clents across globe
+        </p>
+        <div class="mt-6 mb-6  flex items-center justify-center">
+            <button class="hover:bg-yellow-200 px-4 bg-yellow-500 text-2xl rounded-lg text-white font-bold">
+            Order Now
+        </button>
+        </div>
+    </div>
+
+    <div class="bg-gray-300 rounded-lg hover:bg-white mb-6">
+        <img src="/images/studio.jpg" alt="Thumbnail">
+        <h1 class="ml-2 text-blue-500 text-4xl font-bold py-4 ">
+            Eye-catching intro-videos 
+        </h1>
+        <h2 class="ml-2 text-green-900 text-3xl font-bold">
+            RS 1000pkr
+        </h2>
+        <p class="ml-2 text-black text-2xl mt-4">
+            We have delivered thousands of clents across globe
+        </p>
+        <div class="mt-6 mb-6  flex items-center justify-center">
+            <button class="hover:bg-yellow-200 px-4 bg-yellow-500 text-2xl rounded-lg text-white font-bold">
+            Order Now
+        </button>
+        </div>
+    </div>
+
+
+   </div>
+
    <div class="text-blue-300 flex justify-center gap-4 bg-gray-100 py-4 mt-6">
     @2026 copyright is reserved
    </div>
+
+   <script>
+    function sayhello(){
+        console.log("Are you sure to take our offer")
+    }
+   </script>
+
 </body>
 </html>
