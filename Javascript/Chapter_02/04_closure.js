@@ -1,11 +1,12 @@
 
-const createBankAccount = (initialBalance) => {
+const createBankAccount = (initialBalance) => { //outer function
   let balance = initialBalance;
 
   return {
     deposit: (amount) => {
       if (amount > 0) {
         balance += amount;
+       // balance = amount + balance;
         console.log(`Deposited: $${amount}. New balance: $${balance}`);
       } else {
         console.log('Deposit amount must be positive.');
@@ -14,6 +15,7 @@ const createBankAccount = (initialBalance) => {
     withdraw: (amount) => {
       if (amount > 0 && amount <= balance) {
         balance -= amount;
+        //balance = balance - amount;
         console.log(`Withdrew: $${amount}. New balance: $${balance}`);
       } else if (amount > balance) {
         console.log('Insufficient funds.');
