@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input class="input" type="text"  placeholder="Enter your preferences">
+        <button class="button" >Enter</button>
+        <ul class="list"> </ul>
+    
+
+    <script>
+        let input = document.querySelector(".input")
+        let button = document.querySelector(".button")
+        let list = document.querySelector(".list")
+        button.addEventListener("click", function(){
+            event.preventDefault()
+            if(input.value.trim() !== "") {
+                let li = document.createElement("li");
+                li.textContent = input.value;
+                list.append(li);
+                input.value = ""; // Clears the input box
+
+                const deleteBtn = document.createElement("button")
+                deleteBtn.textContent = "Remove"
+                list.append(deleteBtn)
+                deleteBtn.addEventListener("click", function(){
+                li.remove()
+                deleteBtn.remove()
+            })
+            }
+            
+        })
+    </script>
+</body>
+</html>
