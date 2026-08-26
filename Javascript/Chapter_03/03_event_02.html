@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form">
+    <input class="place" type="text" placeholder="Enter you name">
+    <button class="button">submit</button>
+    </form>
+    <p class="message"></p>
+    <script>
+        let form = document.querySelector(".form")
+        let place = document.querySelector(".place")
+        let button = document.querySelector(".button")
+        let message = document.querySelector(".message")
+        form.addEventListener("submit" , function(){
+            event.preventDefault()
+            message.textContent = place.value;
+            
+        })
+    </script>
+</body>
+</html>

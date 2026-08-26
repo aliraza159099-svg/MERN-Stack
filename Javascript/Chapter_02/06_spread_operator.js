@@ -1,4 +1,12 @@
 //Spread operator with array
+/*
+Immutability: It creates shallow copies, 
+allowing you to modify data without altering
+ the original source.Clean Syntax: It replaces
+older, more verbose methods like Object.assign()
+or complex for loops.Readability: It makes code
+shorter and easier for developers to understand at a glance.
+*/
 
 let fruits = ["apple","fig","banana","pine apple"];
 let vegitables = ["carrot","onion","mirch"]
@@ -31,3 +39,19 @@ function names(...x){
     console.log(x)
 };
 names("Raza","Abbas","Qasim");
+
+//updation
+let profile = { name: "Ali", role: "User" };
+// Overrides 'role' and adds 'verified'
+let updatedProfile = { ...profile, role: "Admin", verified: true };
+// Result: { name: "Ali", role: "Admin", verified: true }
+
+let framework = "React";
+let letters = [...framework]; 
+// Result: ['R', 'e', 'a', 'c', 't']
+console.log(letters)
+let number =[];
+let complete = [...number, 4, 5]; 
+// Result: [1, 2, 3, 4, 5]
+
+

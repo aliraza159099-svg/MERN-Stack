@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1 class="heading" >Welcome to PIEAS</h1>
+    <button class="bg-blue-900 text-white hover:bg-blue-700 transition:scale-105 font-bold px-4 rounded-lg  m-2 py-1" id="button">SignUp</button>
+
+    <script>
+        let heading = document.querySelector(".heading")
+        let button  = document.querySelector("#button")
+        button.addEventListener("click", function(){
+            heading.innerHTML = "We will enjoy here at pieas"
+        })
+    </script>
+
+
+</body>
+</html>
