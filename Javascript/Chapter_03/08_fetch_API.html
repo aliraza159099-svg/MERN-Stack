@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONPlaceholder Users Test</title>
+</head>
+<body>
+
+    <!-- 1. The list element must exist in the HTML first -->
+    <ul id="users"></ul>
+
+    <!-- 2. The script goes at the very bottom so the HTML loads first -->
+    <script>
+        const list = document.getElementById("users");
+
+        // Fetching from the official JSONPlaceholder API
+        fetch("https://typicode.com")
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok: " + response.status);
+                }
+                return response.json();
+            })
+            .then((data) => {
+                // Clear any fallback text and render names
+                list.innerHTML = ""; 
+                data.forEach((user) => {
+                    list.innerHTML += `<li>${user.name}</li>`;
+                });
+            })
+            .catch((error) => {
+                // If it fails, this will display the error directly on your screen
+                list.innerHTML = `<li style="color: red;">Error loading users: ${error.message}</li>`;
+                console.error("Fetch error:", error);
+            });
+    </script>
+</body>
+</html>
