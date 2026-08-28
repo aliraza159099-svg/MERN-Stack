@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MERN</title>
+</head>
+<body>
+    <button onclick="savedata()">Save Name</button>
+    <script>
+        function savedata(){
+            localStorage.setItem("name","Raza")
+            localStorage.setItem("email","Raza@demail.com")
+            alert("Data saved")
+        }
+    </script>
+</body>
+</html>

@@ -16,8 +16,8 @@ login("admin","1234").then((abc)=>{
 })
 
 //using async with function the 
-//function become a promise function and no
-//  thre is no need to write promise
+//function become a promise function and now
+// thre is no need to write promise
 
 const greet = async (name) => { 
     return `Hello ${name}`; 
