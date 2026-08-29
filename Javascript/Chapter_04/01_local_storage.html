@@ -9,9 +9,19 @@
     <button onclick="savedata()">Save Name</button>
     <script>
         function savedata(){
-            localStorage.setItem("name","Raza")
-            localStorage.setItem("email","Raza@demail.com")
-            alert("Data saved")
+            // localStorage.setItem("name","Raza")
+            // localStorage.setItem("email","Raza@demail.com")
+            // alert("Data saved")
+            //saving an obj in local storage
+            let user = {
+                "name":"Ali",
+                "age":19
+            }
+            localStorage.setItem("user",JSON.stringify(user))
+            alert("User saved!")
+            //get data on colsole
+            let details = JSON.parse(localStorage.getItem("user"))
+            console.log(details)
         }
     </script>
 </body>
