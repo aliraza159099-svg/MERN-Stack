@@ -34,6 +34,20 @@ let displayTask = ()=>{
         li.textContent = task;
         li.classList.add("todo-item"); 
         taskList.append(li);
+
+        let deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.classList.add("deleteBtn");
+        li.append(deleteBtn);
+
+        deleteBtn.addEventListener("click", () => {
+            // Remove the task from the array
+            tasks = tasks.filter((t) => t !== task);
+            // Update localStorage
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            // Refresh the displayed list
+            displayTask();
+        });
         
     });
 }
