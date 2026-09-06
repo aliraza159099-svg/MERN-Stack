@@ -1,3 +1,40 @@
-// selecting html elements 
-let input = document.querySelector("input")
-let addBtn = document.querySelector("addBtn")
+
+let input = document.querySelector(".input");
+let addBtn = document.querySelector(".addBtn");
+let taskList = document.querySelector(".taskList");
+// 2. Load existing tasks from localStorage or start with an empty array
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+addBtn.addEventListener("click", () => {
+    // 3. Trim whitespace to prevent adding spaces as tasks
+    let taskText = input.value.trim(); 
+
+    if (taskText === "") {
+        alert("Empty task can't be added");
+    } else {
+        // 4. Push the new task into our array
+        tasks.push(taskText);
+
+        // 5. Save the updated array back to localStorage
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        // 6. Clear the input field for the next task
+        input.value = "";
+
+        alert("Task saved successfully!");
+        displayTask()
+    }
+});
+
+let displayTask = ()=>{
+    taskList.innerHTML = "";
+    tasks.forEach((task) => {
+        
+        let li = document.createElement("li");
+        li.textContent = task;
+        li.classList.add("todo-item"); 
+        taskList.append(li);
+        
+    });
+}
+displayTask()
