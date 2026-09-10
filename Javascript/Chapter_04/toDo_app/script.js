@@ -1,39 +1,37 @@
-
 let input = document.querySelector(".input");
 let addBtn = document.querySelector(".addBtn");
 let taskList = document.querySelector(".taskList");
-// 2. Load existing tasks from localStorage or start with an empty array
+
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+let isDone = JSON.parse(localStorage.getItem("isDone")) || {};
+
 addBtn.addEventListener("click", () => {
-    // 3. Trim whitespace to prevent adding spaces as tasks
     let taskText = input.value.trim(); 
 
     if (taskText === "") {
         alert("Empty task can't be added");
     } else {
-        // 4. Push the new task into our array
         tasks.push(taskText);
-
-        // 5. Save the updated array back to localStorage
         localStorage.setItem("tasks", JSON.stringify(tasks));
-
-        // 6. Clear the input field for the next task
         input.value = "";
-
         alert("Task saved successfully!");
-        displayTask()
+        displayTask();
     }
 });
 
-let displayTask = ()=>{
+let displayTask = () => {
     taskList.innerHTML = "";
+    
     tasks.forEach((task) => {
-        
         let li = document.createElement("li");
-        li.textContent = task;
         li.classList.add("todo-item"); 
-        taskList.append(li);
+
+        // 3. LOGIC FIX: Wrap task text in a separate span tag
+        // This ensures the line-through style cuts only the text, leaving your buttons clean
+        let taskSpan = document.createElement("span");
+        taskSpan.textContent = task;
+        li.appendChild(taskSpan);
 
         let deleteBtn = document.createElement("button");
         deleteBtn.textContent = "Delete";
@@ -45,23 +43,33 @@ let displayTask = ()=>{
         doneBtn.classList.add("doneBtn");
         li.append(doneBtn);
 
+        if (isDone[task] === true) {
+            taskSpan.style.textDecoration = "line-through";
+            li.classList.add("done");
+        }
+
+        // Delete button logic
         deleteBtn.addEventListener("click", () => {
-            // Remove the task from the array
             tasks = tasks.filter((t) => t !== task);
-            // Update localStorage
             localStorage.setItem("tasks", JSON.stringify(tasks));
-            // Refresh the displayed list
+            
+            // Clean up the tracking state database for the deleted item
+            delete isDone[task];
+            localStorage.setItem("isDone", JSON.stringify(isDone));
+            
             displayTask();
         });
-
         doneBtn.addEventListener("click", () => {
-            li.style.textDecoration = "line-through"; // Example of marking as done
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-            // For example, you could add a class to indicate it's done
+            isDone[task] = true; // Use the unique task string text as the object key
+            localStorage.setItem("isDone", JSON.stringify(isDone)); // Commit to localStorage
+            
+            taskSpan.style.textDecoration = "line-through"; // Strike through text immediately
             li.classList.add("done");
-
         });
         
+        taskList.append(li);
     });
 }
-displayTask()
+
+// Render the application list on initial load
+displayTask();
