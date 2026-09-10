@@ -40,6 +40,11 @@ let displayTask = ()=>{
         deleteBtn.classList.add("deleteBtn");
         li.append(deleteBtn);
 
+        let doneBtn = document.createElement("button");
+        doneBtn.textContent = "Done";
+        doneBtn.classList.add("doneBtn");
+        li.append(doneBtn);
+
         deleteBtn.addEventListener("click", () => {
             // Remove the task from the array
             tasks = tasks.filter((t) => t !== task);
@@ -47,6 +52,14 @@ let displayTask = ()=>{
             localStorage.setItem("tasks", JSON.stringify(tasks));
             // Refresh the displayed list
             displayTask();
+        });
+
+        doneBtn.addEventListener("click", () => {
+            li.style.textDecoration = "line-through"; // Example of marking as done
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+            // For example, you could add a class to indicate it's done
+            li.classList.add("done");
+
         });
         
     });

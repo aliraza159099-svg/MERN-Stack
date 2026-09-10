@@ -1,11 +1,13 @@
 .container{
-    width:30%;
+    width:50%;
     border-radius: 5px;
     border: none;
     align-items: center;
-    background-color: rgb(166, 165, 163);
+    background-color: rgb(253, 194, 75);
     align-self: center;
     align-content: center;
+    margin-left: 24%;
+    margin-right: 24%;
 }
 .heading{
     margin-top: 8px;
@@ -60,20 +62,21 @@
     font-size: medium;
 }
 .todo-item {
-    background-color: #f3f4f6; /* Soft light gray background */
-    color: #1e3a8a;            /* Deep professional blue text */
-    font-weight: bold;         /* Bold typography */
+    background-color: #f3f4f6; 
+    color: #1e3a8a;            
+    font-weight: bold;   
     width: 60%;
-    padding: 12px 16px;        /* Spacing inside the item */
-    margin-bottom: 8px;        /* Gap between individual items */
+    padding: 12px 16px;        
+    margin-bottom: 8px;       
     margin-left: 2px;   
-    height: 15px;     /* Smooth, rounded corners */
-    list-style: none;          /* Removes the default bullet point */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Subtle shadow effect */
+    height: 15px;     
+    list-style: none;         
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 .deleteBtn {
     align-items: center;
-    background-color: #ef4444; /* Professional red for delete action */
+    background-color: #ef4444; 
+    /* Professional red for delete action */
     color: white;
     border: none;
     padding: 3px;
