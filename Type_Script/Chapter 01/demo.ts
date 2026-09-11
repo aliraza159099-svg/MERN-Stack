@@ -13,3 +13,6 @@ const studentInfo: { name: string; age: number; isStudent: boolean } = {
   isStudent: true
 };
 console.log(studentInfo);
+
+let nam:string = "Raza Balghari";
+// nam = 23; its not allowed in ts but allowed in js name will scccept only the strings
