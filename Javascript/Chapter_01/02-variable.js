@@ -23,3 +23,9 @@ console.log("The sum of b and c is " + (b + c));
 
 const cnic = 123456789;
 console.log("My CNIC is " + cnic);
+
+let abc = 6;
+console.log(abc)
+abc="Ali raza";
+console.log(abc)
+abc="Ali raza";
