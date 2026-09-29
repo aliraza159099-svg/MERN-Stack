@@ -7,10 +7,10 @@ console.log("Hello World");
 let a = 8;
 console.log("The updated value of a = "+ a);
 
-var name = "Raza Balghari";
-console.log("My name is " + name);
-name = "Raza Khan";
-console.log("My name is " + name);
+var name1 = "Raza Balghari";
+console.log("My name is " + name1);
+name1 = "Raza Khan";
+console.log("My name is " + name1);
 
 
 let b = 5;
